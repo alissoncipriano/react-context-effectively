@@ -8,12 +8,12 @@ const initialState = { count: 0 }
 
 // Function to manage my states
 function countReducer(state, action) {
-  switch(action) {
+  switch(action.type) {
     case 'decrement':
       return { count: state.count - 1 };
     case 'increment':
       return { count: state.count + 1 }
-    default: throw new Error(`Unhandled action type: ${action}`)
+    default: throw new Error(`Unhandled action type: ${action.type}`)
   }
 }
 

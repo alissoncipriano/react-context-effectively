@@ -4,12 +4,17 @@ import { useCount } from './providers/count-context';
 function App() {
   const counter = useCount();
 
-  console.log(counter);
+  // console.log(counter);
 
   return (
-    
       <div className="App">
-        Hello, World!
+        <h1>Clique, se tiver coragem! 😉</h1>
+
+        <div className='Counter'>
+          <button onClick={ () => counter.dispatch({ type: 'decrement' }) }>-</button>
+          <input type="text" value={counter.state.count} disabled />
+          <button onClick={ () => counter.dispatch({ type: 'increment' }) }>+</button>
+        </div>
       </div>
   );
 }
